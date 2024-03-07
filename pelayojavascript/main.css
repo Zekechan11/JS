@@ -1,0 +1,31 @@
+a {
+  font-family: Arial, sans-serif;
+}
+
+/* Style for the modal header */
+.modal-header {
+  background-image: url(images/we.jpeg);
+  color: #fff;
+}
+
+/* Style for the modal body */
+.modal-body {
+  background-image: url(images/we.jpeg);
+}
+
+.modal-body label {
+    color: white;
+}
+.modal-footer{
+    background-image: url(images/we.jpeg);
+  }
+/* Style for buttons */
+.btn {
+  font-family: Arial, sans-serif;
+}
+
+/* Style for the update and delete buttons */
+.btnUpdate,
+.btnDelete {
+  margin-right: 5px;
+}

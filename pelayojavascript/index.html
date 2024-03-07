@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body style="background-image: url(images/we.jpeg);background-size: cover;background-position: bottom;">
+  <nav class="navbar border-bottom border-body" data-bs-theme="dark">
+      <a class="navbar-brand px-3" href="#">
+        <img src="images/list.png" width="50" height="50">
+        Category List
+      </a>
+  </nav>
+  <div class="container mt-5">
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-warning mt-5 float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Add Category
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Add Category</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color: red;"></button>
+          </div>
+          <div class="modal-body">
+            <form id="newCategoryForm">
+              <label for="categoryName" class="py-2">Add Category</label>
+              <input type="text" name="categoryName" id="categoryName" class="form-control">
+          </div>
+          </form>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-success" id="btnSaveCategory">Add Category</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <table class="table table-bordered table-hover text-center" style="position: relative;top:10px;">
+      <thead class="table table-dark">
+        <tr>
+          <th scope="col">Category ID</th>
+          <th scope="col">Category Name</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <template id="categoryRowTemplate">
+          <tr>
+            <td class="id"></td>
+            <td class="name"></td>
+            <td><button type="button" class="btnUpdate btn btn-success" data-bs-toggle="modal"
+                data-bs-target="#exampleModal1">
+                Update</button>
+              <button type="button" class="btnDelete btn btn-outline-danger" data-bs-toggle="modal"
+                data-bs-target="#exampleModal1">
+                Delete</button>
+            </td>
+          </tr>
+        </template>
+      </tbody>
+    </table>
+    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="updateModalLabel">Update Category</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color: red;"></button>
+          </div>
+          <div class="modal-body">
+            <form id="updateCategoryForm">
+              <input type="hidden" id="updateCategoryId">
+              <div class="mb-3">
+                <label for="updateCategoryName" class="form-label">Category Name</label>
+                <input type="text" class="form-control" id="updateCategoryName">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-success" id="btnUpdateCategory">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://kit.fontawesome.com/7b92f6b770.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
